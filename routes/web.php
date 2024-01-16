@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//Google Auth
+//http://127.0.0.1:8000/home/googleauth/callback
+Route::get('/googleauth', 'LoginController@redirectGoogle');
+Route::get('/googleauth/callback', 'LoginController@callbackGoogle');
