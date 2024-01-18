@@ -20,6 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin', function (){
+    return view('admin.admin_panel');
+} );
 
 //Google Auth
 //http://127.0.0.1:8000/home/googleauth/callback
