@@ -16,7 +16,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
-<body>
+<body @style('background-color: #DDDDDD')>
     <div id="app">
         <nav class="navbar navbar-expand-md shadow-sm" style="background: #111111;">
             <div class="container">
@@ -74,9 +74,12 @@
             </div>
         </nav>
 
-        <main class="py-4" style="background-color: #DDDDDD">
+        <main class="py-4">
             @yield('content')
         </main>
     </div>
+
 </body>
 </html>
+
+

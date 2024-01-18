@@ -29,4 +29,23 @@ Route::get('/admin', function (){
 Route::get('/googleauth', 'LoginController@redirectGoogle');
 Route::get('/googleauth/callback', 'LoginController@callbackGoogle');
 
+//Post Routing
+Route::get('/post', [App\Http\Controllers\PostController::class, 'index'])
+    ->name('post');
 
+Route::get('/post/create', [\App\Http\Controllers\PostController::class, 'create'])
+    ->name('post.create');
+
+Route::post('/post', [\App\Http\Controllers\PostController::class, 'store'])
+    ->name('post.store');
+
+Route::get('/post/{id}/edit', [\App\Http\Controllers\PostController::class, 'edit'])
+    ->name('post.edit');
+
+Route::put('/post/{id}', [\App\Http\Controllers\PostController::class, 'update'])
+    ->name('post.update');
+
+Route::delete('/post/{id}', [\App\Http\Controllers\PostController::class, 'destroy'])
+    ->name('post.destroy');
+
+//Close Post Routing
