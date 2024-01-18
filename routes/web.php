@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
@@ -25,3 +25,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //http://127.0.0.1:8000/home/googleauth/callback
 Route::get('/googleauth', 'LoginController@redirectGoogle');
 Route::get('/googleauth/callback', 'LoginController@callbackGoogle');
+
+
