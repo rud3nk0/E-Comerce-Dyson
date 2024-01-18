@@ -10,16 +10,16 @@ class PostController extends Controller
 
     public function index(){
         $posts = Post::all();
-//        dd($posts);
-        return view('Post.listPost', ['posts'=>$posts]);
+        return view('Post.listPost', ['posts' =>$posts]);
     }
 
     public function store(Request $request){
-        $data = $request->validate([
-           'name' => 'required',
-           'image' => 'required',
-           'description' => 'required',
+        $data =  $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
         if ($request->hasFile('image')){
             $image = $request->file('image');
             $imageName = time() . '_' . $image->getClientOriginalName();
@@ -27,6 +27,7 @@ class PostController extends Controller
 
             $request->image->move(public_path('storage/images'), $imageName);
         }
+
 
         Post::create($data);
 
