@@ -1,0 +1,62 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Post;
+use Illuminate\Http\Request;
+
+class PostController extends Controller
+{
+
+    public function index(){
+        $posts = Post::all();
+//        dd($posts);
+        return view('Post.listPost', ['posts'=>$posts]);
+    }
+
+    public function store(Request $request){
+        $data = $request->validate([
+           'name' => 'required',
+           'image' => 'required',
+           'description' => 'required',
+        ]);
+        if ($request->hasFile('image')){
+            $image = $request->file('image');
+            $imageName = time() . '_' . $image->getClientOriginalName();
+            $data['image'] = $imageName;
+
+            $request->image->move(public_path('storage/images'), $imageName);
+        }
+
+        Post::create($data);
+
+        $posts = Post::all();
+        return view('Post.listPost', ['posts'=>$posts]);
+    }
+
+    public function update(Request $request, $id){
+        $postId = Post::where('id', $id)->first();
+
+        if ($postId){
+            $postId->name = $request->name;
+            $postId->image = $request->image;
+            $postId->description = $request->description;
+
+            $postId->save();
+        }
+
+        $posts = Post::all();
+        return view('Post.listPost', ['posts' => $posts]);
+    }
+
+    public function destroy($id){
+        $post = Post::find($id);
+        if ($post) {
+            $post->delete();
+        }
+        $posts = Post::all();
+        return view('Post.listPost', ['posts' => $posts]);
+    }
+
+
+}
