@@ -1,8 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-       <h2>Hello <span style="font-weight: bold">{{ Auth::user()->name }}</span> it's Product page</h2>
+    <div class="container" style="display: flex">
+        <button style="border: none; background-color: inherit; font-size: 24px; ">
+            <a style="text-decoration: none; color: #1a202c"
+               href="{{route('home')}}">
+                <
+            </a>
+        </button>
+        <h2 style="margin: 10px 10px">Hello <span style="font-weight: bold">{{ Auth::user()->name }}</span> it's Admin Panel</h2>
     </div>
     <button type="button" class="modal_btn" data-bs-toggle="modal"
             data-bs-target="#modal-form-create">+&nbsp; New Post
