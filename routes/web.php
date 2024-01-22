@@ -24,14 +24,17 @@ Route::get('/main', function (){
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/admin', function (){
     return view('admin.admin_panel');
-} );
+} )->name('admin');
 
 //Google Auth
 //http://127.0.0.1:8000/home/googleauth/callback
 Route::get('/googleauth', 'LoginController@redirectGoogle');
 Route::get('/googleauth/callback', 'LoginController@callbackGoogle');
+
+
 
 //Post Routing
 Route::get('/post', [App\Http\Controllers\PostController::class, 'index'])

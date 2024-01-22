@@ -59,5 +59,4 @@ class PostController extends Controller
         return view('Post.listPost', ['posts' => $posts]);
     }
 
-
 }
