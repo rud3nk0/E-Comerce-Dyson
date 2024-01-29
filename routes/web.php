@@ -13,17 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])
+    ->name('home');
 
 Auth::routes();
 
 Route::get('/main', function (){
     return view('main.main_page');
 });
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/admin', function (){
     return view('admin.admin_panel');
@@ -33,8 +30,6 @@ Route::get('/admin', function (){
 //http://127.0.0.1:8000/home/googleauth/callback
 Route::get('/googleauth', 'LoginController@redirectGoogle');
 Route::get('/googleauth/callback', 'LoginController@callbackGoogle');
-
-
 
 //Post Routing
 Route::get('/post', [App\Http\Controllers\PostController::class, 'index'])

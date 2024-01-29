@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-md shadow-sm" style="background: #111111;">
             <div class="container">
                 <p class="navbar-brand" style="color: white; font-size: 20px; font-weight: 700; padding-top: 20px">
-                    Dyson
+                    <img src="{{ asset('storage/logo.png') }}" alt="">
                 </p>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
