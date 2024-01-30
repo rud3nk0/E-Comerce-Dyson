@@ -110,7 +110,7 @@
             @endforeach
         </div>
     </div>
-    <div class="faq" style="background: #ffffff; width: 1920px; height: 997px ; margin-left: -305px">
+    <div class="faq" style="background: #ffffff; width: 1920px; height: 700px ; margin-left: -305px">
         <div class="content_faq" style="padding: 150px 280px ">
             <h1 style="color: #111111; font-size: 42px"> <strong>FAQ</strong>  — Часто задаваемые вопросы</h1>
             <hr style="width: 1360px;">
@@ -159,6 +159,34 @@
             </div>
         </div>
     </div>
+    <div class="order" style="background: #ffffff; width: 1920px; height: 690px ; margin-left: -305px">
+        <div class="order_title">
+            <h2 style="color: #111111; font-size: 42px">Как оформить заказ</h2>
+        </div>
+        <div class="confirm_order" style="display: flex; justify-content: space-around">
+            <div class="card_order" style="text-align: center">
+                <img src="{{ asset('storage/1.png') }}" alt="">
+                <p style="color: #000000; font-size: 20px">Оставьте заявку</p>
+                <p style="color: rgba(0,0,0,0.8); font-size: 18px">Выберите цвет стайлера и заполните форму</p>
+            </div>
+            <div class="card_order" style="text-align: center">
+                <img src="{{ asset('storage/2.png') }}" alt="">
+                <p style="color: #000000; font-size: 20px">Дождитесь звонка</p>
+                <p style="color: rgba(0,0,0,0.8); font-size: 18px">Наш менеджер свяжется с Вами,<br>
+                    в течении 24 часов, чтобы уточнить детали заказа
+                </p>
+            </div>
+            <div class="card_order" style="text-align: center">
+                <img src="{{ asset('storage/3.png') }}" alt="">
+                <p style="color: #000000; font-size: 20px">Дождитесь звонка</p>
+                <p style="color: rgba(0,0,0,0.8); font-size: 18px">Получите заказ у курьера<br>
+                    или в отделении транспортной,<br>
+                    компании
+                </p>
+            </div>
+        </div>
+    </div>
+    .
 
 
 </div>
